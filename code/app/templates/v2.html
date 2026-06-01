@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phase 2 - 语义搜索</title>
+    <link rel="stylesheet" href="/static/app.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <strong>On-Call 助手</strong>
+      <nav>
+        <a href="/v1">V1 搜索</a>
+        <a class="active" href="/v2">V2 语义</a>
+        <a href="/v3">V3 Agent</a>
+      </nav>
+    </header>
+
+    <main class="shell" data-page="v2">
+      <section class="panel intro">
+        <div>
+          <p class="eyebrow">Phase 2</p>
+          <h1>语义搜索</h1>
+          <p class="hint">输入自然语言问题，系统会用本地 hybrid fallback 做语义匹配并按相关性排序。</p>
+        </div>
+        <form id="search-form">
+          <input id="query" name="q" placeholder="例如：服务器挂了、黑客攻击、机器学习模型出问题" autocomplete="off">
+          <button type="submit">搜索</button>
+        </form>
+        <div class="examples" aria-label="示例查询">
+          <button type="button" data-example="服务器挂了">服务器挂了</button>
+          <button type="button" data-example="黑客攻击">黑客攻击</button>
+          <button type="button" data-example="机器学习模型出问题">机器学习模型出问题</button>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="section-head">
+          <h2>语义结果</h2>
+          <span id="summary" class="summary">等待查询</span>
+        </div>
+        <div id="results" class="empty">请输入自然语言问题开始搜索。</div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

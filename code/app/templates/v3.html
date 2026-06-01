@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phase 3 - Agent 对话</title>
+    <link rel="stylesheet" href="/static/app.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <strong>On-Call 助手</strong>
+      <nav>
+        <a href="/v1">V1 搜索</a>
+        <a href="/v2">V2 语义</a>
+        <a class="active" href="/v3">V3 Agent</a>
+      </nav>
+    </header>
+
+    <main class="shell" data-page="v3">
+      <section class="panel intro">
+        <div>
+          <p class="eyebrow">Phase 3</p>
+          <h1>Agent 对话</h1>
+          <p class="hint">Agent 会先读取 index.json，再通过 readFile 读取明确 SOP 文件，并展示完整工具调用过程。</p>
+        </div>
+        <form id="chat-form">
+          <input id="message" name="message" placeholder="例如：数据库主从延迟超过30秒怎么处理？" autocomplete="off">
+          <button type="submit">发送</button>
+        </form>
+        <div class="examples" aria-label="示例问题">
+          <button type="button" data-example="数据库主从延迟超过30秒怎么处理？">数据库主从延迟</button>
+          <button type="button" data-example="服务 OOM 了怎么办？">服务 OOM</button>
+          <button type="button" data-example="P0 故障的响应流程是什么？">P0 响应流程</button>
+          <button type="button" data-example="怀疑有人入侵了系统">安全入侵</button>
+          <button type="button" data-example="推荐结果质量下降了">推荐质量下降</button>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="section-head">
+          <h2>对话记录</h2>
+          <span id="summary" class="summary">等待提问</span>
+        </div>
+        <div id="chat-log" class="empty">请输入 On-Call 问题开始对话。</div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

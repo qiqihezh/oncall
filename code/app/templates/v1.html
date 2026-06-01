@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phase 1 - 关键词搜索</title>
+    <link rel="stylesheet" href="/static/app.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <strong>On-Call 助手</strong>
+      <nav>
+        <a class="active" href="/v1">V1 搜索</a>
+        <a href="/v2">V2 语义</a>
+        <a href="/v3">V3 Agent</a>
+      </nav>
+    </header>
+
+    <main class="shell" data-page="v1">
+      <section class="panel intro">
+        <div>
+          <p class="eyebrow">Phase 1</p>
+          <h1>关键词搜索</h1>
+          <p class="hint">输入 SOP 中出现的关键词，返回文档 ID、标题、命中片段和相关性分数。</p>
+        </div>
+        <form id="search-form">
+          <input id="query" name="q" placeholder="例如：OOM、故障、CDN" autocomplete="off">
+          <button type="submit">搜索</button>
+        </form>
+        <div class="examples" aria-label="示例查询">
+          <button type="button" data-example="OOM">OOM</button>
+          <button type="button" data-example="故障">故障</button>
+          <button type="button" data-example="replication">replication</button>
+          <button type="button" data-example="CDN">CDN</button>
+          <button type="button" data-example="&">&amp;</button>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="section-head">
+          <h2>搜索结果</h2>
+          <span id="summary" class="summary">等待查询</span>
+        </div>
+        <div id="results" class="empty">请输入关键词开始搜索。</div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+# Secrets and local environment
+.env
+*.env
+!.env.example
+code/.env
+
+# Python and uv local state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+code/.venv/
+.uv-cache/
+code/.uv-cache/
+
+# Runtime logs and temporary files
+*.log
+server*.log
+*.tmp
+*.bak
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
